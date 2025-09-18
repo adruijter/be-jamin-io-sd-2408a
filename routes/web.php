@@ -4,10 +4,13 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AllergeenController;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/allergeen', [AllergeenController::class, 'index'])->name('allergeen.index');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
