@@ -7,7 +7,7 @@
     <title>Allergenen</title>
 </head>
 <body>
-    <h1>{{ $data['title'] }}</h1>
+    <h1>{{ $title }}</h1>
 
     <table class="table">
         <thead>
@@ -15,10 +15,10 @@
             <th>Omschrijving</th>
         </thead>
         <tbody>            
-            @forelse ($data['allergenen'] as $allergeen) 
+            @forelse ($allergenen as $allergeen) 
                 <tr>
-                    <td>$allergeen->Naam</td>
-                    <td>$allergeen->Omschrijving</td>
+                    <td>{{ $allergeen->Naam }}</td>
+                    <td>{{ $allergeen->Omschrijving}} </td>
                 </tr>
             @empty
                 <tr>

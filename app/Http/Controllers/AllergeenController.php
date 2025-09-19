@@ -22,13 +22,9 @@ class AllergeenController extends Controller
     {
         $allergenen = $this->allergeenModel->sp_GetAllAllergenen();
 
-        $data = [
+        return view('allergenen.index', [
             'title' => 'Allergenen',
             'allergenen' => $allergenen
-        ];
-
-        return view('allergenen.index', [
-            'data' => $data
         ]);
     }
 
