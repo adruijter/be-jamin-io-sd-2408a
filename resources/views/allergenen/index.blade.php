@@ -18,7 +18,7 @@
             @forelse ($allergenen as $allergeen) 
                 <tr>
                     <td>{{ $allergeen->Naam }}</td>
-                    <td>{{ $allergeen->Omschrijving}} </td>
+                    <td>{{ $allergeen->Omschrijving }} </td>
                 </tr>
             @empty
                 <tr>
