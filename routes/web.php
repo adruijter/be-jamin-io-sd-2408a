@@ -10,7 +10,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// De route naar het weergeven van alle allergenen
 Route::get('/allergeen', [AllergeenController::class, 'index'])->name('allergeen.index');
+
+// De route naar het formulier voor het toevoegen van de nieuwe allergeen
+Route::get('/allergeen/create', [AllergeenController::class, 'create'])->name('allergeen.create');
+
+// De route naar de store method waar het post array naartoe gestuurd wordt
+Route::post('/allergeen', [AllergeenController::class, 'store'])->name('allergeen.store');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

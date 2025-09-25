@@ -7,25 +7,37 @@
     <title>Allergenen</title>
 </head>
 <body>
-    <h1>{{ $title }}</h1>
+    <div class="container">
+        <h2>{{ $title }}</h2>
 
-    <table class="table">
-        <thead>
-            <th>Naam</th>
-            <th>Omschrijving</th>
-        </thead>
-        <tbody>            
-            @forelse ($allergenen as $allergeen) 
-                <tr>
-                    <td>{{ $allergeen->Naam }}</td>
-                    <td>{{ $allergeen->Omschrijving }} </td>
-                </tr>
-            @empty
-                <tr>
-                    <td colspan="3">Geen allergenen beschikbaar</td>
-                </tr>  
-            @endforelse          
-        </tbody>
-    </table>
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" aria-label="sluiten" data-bs-dismiss="alert"></button>
+            </div>
+            <meta http-equiv="refresh" content="3;url={{ route('allergeen.index') }}">
+        @endif
+
+        <a href="{{ route('allergeen.create') }}" class="btn btn-primary my-3">Nieuw Allergeen</a>
+    
+        <table class="table">
+            <thead>
+                <th>Naam</th>
+                <th>Omschrijving</th>
+            </thead>
+            <tbody>            
+                @forelse ($allergenen as $allergeen) 
+                    <tr>
+                        <td>{{ $allergeen->Naam }}</td>
+                        <td>{{ $allergeen->Omschrijving }} </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="3">Geen allergenen beschikbaar</td>
+                    </tr>  
+                @endforelse          
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

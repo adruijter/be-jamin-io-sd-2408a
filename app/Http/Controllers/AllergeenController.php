@@ -33,7 +33,9 @@ class AllergeenController extends Controller
      */
     public function create()
     {
-        //
+        return view('allergenen.create', [
+            'title' => 'Voeg een nieuwe allergeen toe'
+        ]);
     }
 
     /**
@@ -41,7 +43,23 @@ class AllergeenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "In ben in de store method";
+        // dd($request->all());
+
+        $data = $request->validate([
+            'name' => 'required|string|max:50',
+            'description' => 'required|string|max:255'
+        ]);
+
+        // dd($data);
+
+        $newId = $this->allergeenModel->sp_CreateAllergeen(
+            $data['name'],
+            $data['description']
+        );
+
+        return redirect()->route('allergeen.index')
+                         ->with('success', 'Allergeen is succesvol toegevoegd met id=' . $newId);
     }
 
     /**
