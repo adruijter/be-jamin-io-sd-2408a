@@ -14,7 +14,6 @@ class AllergeenController extends Controller
         $this->allergeenModel = new AllergeenModel();
     }
 
-
     /**
      * Display a listing of the resource.
      */
