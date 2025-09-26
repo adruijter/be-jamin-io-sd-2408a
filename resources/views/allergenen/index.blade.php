@@ -24,12 +24,21 @@
             <thead>
                 <th>Naam</th>
                 <th>Omschrijving</th>
+                <th>Verwijder</th>
             </thead>
             <tbody>            
                 @forelse ($allergenen as $allergeen) 
                     <tr>
                         <td>{{ $allergeen->Naam }}</td>
                         <td>{{ $allergeen->Omschrijving }} </td>
+                        <td>
+                            <form action="{{ route('allergeen.destroy', $allergeen->Id) }}" method="POST" 
+                                onsubmit="return confirm('Weet je zeker dat je dit allergeen wilt verwijderen?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Verwijderen</button>
+                            </form>
+                        </td>
                     </tr>
                 @empty
                     <tr>

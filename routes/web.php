@@ -19,6 +19,8 @@ Route::get('/allergeen/create', [AllergeenController::class, 'create'])->name('a
 // De route naar de store method waar het post array naartoe gestuurd wordt
 Route::post('/allergeen', [AllergeenController::class, 'store'])->name('allergeen.store');
 
+Route::delete('/allergeen/{id}', [AllergeenController::class, 'destroy'])->name('allergeen.destroy');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
