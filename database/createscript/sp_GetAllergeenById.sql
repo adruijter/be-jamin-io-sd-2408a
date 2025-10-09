@@ -10,6 +10,7 @@ BEGIN
     SELECT ALGE.Id
           ,ALGE.Naam
           ,ALGE.Omschrijving
+          ,ALGE.DatumGewijzigd
     FROM  Allergeen AS ALGE
     WHERE ALGE.Id = p_id;
 
