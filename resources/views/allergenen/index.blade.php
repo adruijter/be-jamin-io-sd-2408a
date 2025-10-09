@@ -35,6 +35,7 @@
                     <th>Omschrijving</th>
                     <th class="text-center">Verwijder</th>
                     <th class="text-center">Wijzig</th>
+                    <th class="text-center">Details</th>
                 </thead>
                 <tbody>            
                     @forelse ($allergenen as $allergeen) 
@@ -53,7 +54,14 @@
                                 <form action="{{ route('allergeen.edit', $allergeen->Id) }}" method="POST">
                                     @csrf
                                     @method('GET')
-                                    <button type="submit" class="btn btn-success">Wijzig</button>
+                                    <button type="submit" class="btn btn-success btn-sm">Wijzig</button>
+                                </form>
+                            </td>
+                            <td class="text-center">
+                                <form action="{{ route('allergeen.show', $allergeen->Id) }}" method="POST">
+                                    @csrf
+                                    @method('GET')
+                                    <button type="submit" class="btn btn-warning btn-sm">Details</button>
                                 </form>
                             </td>
                         </tr>

@@ -64,9 +64,22 @@ class AllergeenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AllergeenModel $allergeenModel)
+    public function show($id)
     {
-        //
+        // Ophalen van de detailsinformatie
+        $allergeen = $this->allergeenModel->sp_GetAllergeenById($id);
+
+        // Als er geen allergeen is gevonden voor het id
+        if (!$allergeen) {
+            return redirect()->route('allergeen.index')
+                             ->with('error', 'Allergeen is niet gevonden');
+        }
+
+        // Als er wel een allergeen is gevonden
+        return view('allergenen.show', [
+            'title' => 'Details Allergeen',
+            'allergeen' => $allergeen
+        ]);
     }
 
     /**

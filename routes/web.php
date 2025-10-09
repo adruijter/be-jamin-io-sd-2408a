@@ -25,6 +25,8 @@ Route::get('/allergeen/{id}/edit', [AllergeenController::class, 'edit'])->name('
 
 Route::put('/allergeen/{id}', [AllergeenController::class, 'update'])->name('allergeen.update');
 
+Route::get('/allergeen/{id}', [AllergeenController::class, 'show'])->name('allergeen.show');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
