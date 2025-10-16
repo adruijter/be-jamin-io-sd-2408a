@@ -5,6 +5,7 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllergeenController;
+use App\Http\Controllers\MagazijnController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +27,8 @@ Route::get('/allergeen/{id}/edit', [AllergeenController::class, 'edit'])->name('
 Route::put('/allergeen/{id}', [AllergeenController::class, 'update'])->name('allergeen.update');
 
 Route::get('/allergeen/{id}', [AllergeenController::class, 'show'])->name('allergeen.show');
+
+Route::get('/magazijn', [MagazijnController::class, 'index'])->name('magazijn.index');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

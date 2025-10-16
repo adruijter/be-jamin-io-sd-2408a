@@ -25,6 +25,7 @@
             @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
                     <a href="/allergeen">Allergenen</a>
+                    <a href="{{ route('magazijn.index') }}">Overzicht magazijn Jamin</a>
                     @auth
                         
                         <a

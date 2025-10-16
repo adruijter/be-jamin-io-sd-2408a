@@ -9,10 +9,6 @@ class MagazijnModel extends Model
 {
     public function sp_GetAllProducts()
     {
-        $results = DB::select('CALL sp_GetAllProducts');
-
-        dd($results);
-
-        return $results;
+        return DB::select('CALL sp_GetAllProducts');
     }
 }

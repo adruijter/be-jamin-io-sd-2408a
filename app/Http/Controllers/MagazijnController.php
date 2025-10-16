@@ -7,12 +7,24 @@ use Illuminate\Http\Request;
 
 class MagazijnController extends Controller
 {
+    private $magazijnModel;
+
+    public function __construct()
+    {
+        $this->magazijnModel = new MagazijnModel();
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $products = $this->magazijnModel->sp_GetAllProducts();
+
+        return view('magazijn.index', [
+             'title' => 'Overzicht Magazijn Jamin'
+            ,'products' => $products
+        ]);
     }
 
     /**
