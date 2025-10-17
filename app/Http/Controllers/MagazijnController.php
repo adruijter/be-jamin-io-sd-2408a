@@ -27,6 +27,20 @@ class MagazijnController extends Controller
         ]);
     }
 
+    public function allergenenInfo()
+    {
+        return view('magazijn.allergeenInfo', [
+            'title' => 'Allergeen Informatie'
+        ]);
+    }
+
+     public function leverantieInfo()
+    {
+        return view('magazijn.leverantieInfo', [
+            'title' => 'Leverantie Informatie'
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

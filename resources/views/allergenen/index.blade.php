@@ -27,7 +27,11 @@
                 <meta http-equiv="refresh" content="3;url={{ route('allergeen.index') }}">
             @endif
 
-            <a href="{{ route('allergeen.create') }}" class="btn btn-primary my-3">Nieuw Allergeen</a>
+             <div class="my-3 d-flex gap-3">   
+                 <a href="{{ route('allergeen.create') }}" class="btn btn-primary btn-sm">Nieuw Allergeen</a>
+                 <a href="{{ route('home') }}" class="btn btn-secondary btn-sm me-auto">Terug</a>
+            </div>
+
         
             <table class="table table-striped table-bordered align-middle shadow-sm">
                 <thead>

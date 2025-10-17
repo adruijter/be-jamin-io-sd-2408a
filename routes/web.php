@@ -30,6 +30,10 @@ Route::get('/allergeen/{id}', [AllergeenController::class, 'show'])->name('aller
 
 Route::get('/magazijn', [MagazijnController::class, 'index'])->name('magazijn.index');
 
+Route::get('/magazijn/{id}/allergenenInfo', [MagazijnController::class, 'allergenenInfo'])->name('magazijn.allergenenInfo');
+
+Route::get('/magazijn/{id}/leverantieInfo', [MagazijnController::class, 'leverantieInfo'])->name('magazijn.leverantieInfo');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
