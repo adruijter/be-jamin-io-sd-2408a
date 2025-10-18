@@ -22,8 +22,8 @@ class MagazijnController extends Controller
         $products = $this->magazijnModel->sp_GetAllProducts();
 
         return view('magazijn.index', [
-             'title' => 'Overzicht Magazijn Jamin'
-            ,'products' => $products
+            'title' => 'Overzicht Magazijn Jamin',
+            'products' => $products
         ]);
     }
 
@@ -34,7 +34,7 @@ class MagazijnController extends Controller
         ]);
     }
 
-     public function leverantieInfo()
+    public function leverantieInfo()
     {
         return view('magazijn.leverantieInfo', [
             'title' => 'Leverantie Informatie'
