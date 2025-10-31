@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS Allergeen
    ,IsActief        BIT                             NOT NULL    DEFAULT 1
    ,Opmerkingen     VARCHAR(250)                        NULL    DEFAULT NULL
    ,DatumAangemaakt DateTime(6)                     NOT NULL    DEFAULT CURRENT_TIMESTAMP(6)
-   ,DatumGewijzigd  DateTime(6)                     NOT NULL    DEFAULT CURRENT_TIMESTAMP(6)
+   ,DatumGewijzigd  DateTime(6)                     NOT NULL    DEFAULT NOW(6)
    ,CONSTRAINT      PK_Allergeen_Id   PRIMARY KEY CLUSTERED(Id)
 ) ENGINE=InnoDB;
 
